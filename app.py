@@ -7,8 +7,8 @@ app = Flask(__name__)
 app.config['MAIL_SERVER'] = 'smtp.gmail.com'  # Gmail's SMTP server
 app.config['MAIL_PORT'] = 587  # Port for Gmail's SMTP server
 app.config['MAIL_USE_TLS'] = True  # Use TLS (Transport Layer Security)
-app.config['MAIL_USERNAME'] = 'evans.kabiru@student.moringaschool.com'  # Your email address
-app.config['MAIL_PASSWORD'] = 'ezxg scdc kcww yaps'  # Your email password (use an app password if using Gmail)
+app.config['MAIL_USERNAME'] = 'example@gmail.com'  # Your email address
+app.config['MAIL_PASSWORD'] = 'password'  # Your email password (use an app password if using Gmail)
 
 mail = Mail(app)
 
@@ -19,7 +19,7 @@ def send_email():
         msg = Message(
             subject='Hello from the other side!',
             sender=app.config['MAIL_USERNAME'],  # Explicit sender
-            recipients=['egatangi537@gmail.com']  # Recipient email
+            recipients=['example2@gmail.com']  # Recipient email
         )
         msg.body = "Hey Evans, sending you this email from my Flask app. Let me know if it works!"
         mail.send(msg)
